@@ -11,7 +11,11 @@ fn main() {
     let sentence = String::from("My name is Akshay");
     let first_word = get_first_word(sentence);
 
-    println!("first word : {}", first_word)
+    println!("first word : {}", first_word);
+    let n = 1000;
+    for i in 0..n {
+        println!("Hello: {}", i)
+    }
 }
 
 fn get_first_word(sentence: String) -> String {
