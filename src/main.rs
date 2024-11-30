@@ -18,6 +18,8 @@
 //     }
 // }
 
+use std::fs;
+
 fn get_first_word(sentence: String) -> String {
     let mut ans = String::from("");
     for char in sentence.chars() {
@@ -64,7 +66,7 @@ fn calculate_area(shape: Shape) -> f64 {
     return ans;
 }
 
-fn main() {
+fn main3() {
     let circle = Shape::Circle(10.0);
     let square: Shape = Shape::Square(10.0);
     let rectangle: Shape = Shape::Rectangle(10.0, 20.0);
@@ -72,4 +74,12 @@ fn main() {
     println!("The area of circle is {}", calculate_area(circle));
     println!("The area of square is {}", calculate_area(square));
     println!("The area of rectangle is {}", calculate_area(rectangle)); 
+}
+
+fn main() {
+    let res = fs::read_to_string("example.txt");
+    match res {
+        Ok(content) => print!("{}", content),
+        Err(error) => print!("{}", error)
+    }
 }
