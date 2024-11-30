@@ -40,10 +40,36 @@ impl Rect {
     
 }
 
-fn main() {
+fn main2() {
     let rect = Rect {
         width: 32,
         height: 50,
     };
     print!("The area of rectangle is {}", rect.area());
+}
+
+enum Shape {
+    Circle(f64),
+    Square(f64),
+    Rectangle(f64, f64)
+}
+fn calculate_area(shape: Shape) -> f64 {
+    let ans = match shape {
+        Shape::Circle(radius) => 3.14 * radius * radius,
+
+        Shape::Square(side) => side * side,
+
+        Shape::Rectangle(width, height) => width * height
+    };
+    return ans;
+}
+
+fn main() {
+    let circle = Shape::Circle(10.0);
+    let square: Shape = Shape::Square(10.0);
+    let rectangle: Shape = Shape::Rectangle(10.0, 20.0);
+
+    println!("The area of circle is {}", calculate_area(circle));
+    println!("The area of square is {}", calculate_area(square));
+    println!("The area of rectangle is {}", calculate_area(rectangle)); 
 }
