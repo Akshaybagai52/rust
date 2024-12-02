@@ -76,10 +76,18 @@ fn main3() {
     println!("The area of rectangle is {}", calculate_area(rectangle)); 
 }
 
-fn main() {
+fn main4() {
     let res = fs::read_to_string("example.txt");
     match res {
         Ok(content) => print!("{}", content),
         Err(error) => print!("{}", error)
     }
+}
+
+fn main() {
+    let mut vector = Vec::new();
+    vector.push(1);
+    vector.push(2);
+    vector.push(3);
+    println!("{:?}", vector);
 }
