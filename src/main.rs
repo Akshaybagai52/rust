@@ -18,7 +18,7 @@
 //     }
 // }
 
-use std::fs;
+use std::{collections::HashMap, fs};
 
 fn get_first_word(sentence: String) -> String {
     let mut ans = String::from("");
@@ -84,7 +84,7 @@ fn main4() {
     }
 }
 
-fn main() {
+fn main5() {
     let mut vector = Vec::new();
     vector.push(1);
     vector.push(2);
@@ -102,4 +102,15 @@ fn remove_odd(vector: Vec<i32>) -> Vec<i32> {
         }
     }
     return ans;
+}
+
+fn main() {
+    let mut HashMap = HashMap::new();
+    HashMap.insert("akshay" , 1);
+    HashMap.insert("keshav" , 2);
+    let name = HashMap.get("akashay");
+    match name {
+        Some(value) => println!("{}", value),
+        None => println!("Not found")
+    }
 }
