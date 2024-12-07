@@ -89,5 +89,17 @@ fn main() {
     vector.push(1);
     vector.push(2);
     vector.push(3);
-    println!("{:?}", vector);
+    vector.push(4);
+    vector.push(5);
+    println!("{:?}", remove_odd(vector));
+}
+
+fn remove_odd(vector: Vec<i32>) -> Vec<i32> {
+    let mut ans = Vec::new();
+    for num in vector {
+        if num % 2 == 0 {
+            ans.push(num);
+        }
+    }
+    return ans;
 }
